@@ -9,7 +9,7 @@ hour = time.strftime("%H")
 
 def create_evil_script():
     with open('/tmp/evil.sh', 'w') as f:
-        f.write('ls > evil.tmp\n')
+        f.write('ls > /tmp/evil.tmp\n')
     os.chmod('/tmp/evil.sh', 0o755)
         
 def create_evil_cron(plus_two_minutes, hour):
