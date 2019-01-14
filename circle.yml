@@ -3,21 +3,18 @@ version: 2
 jobs:
   build:
     docker:
-      -image: circleci/python:latest
-
-
+      -image: circleci/python:3.6.1
+    working_directory: ~/repo
     steps:
       - checkout
-
       - run:
           name: build docker container with target os
           command: |
             docker build -t b00kwrm/tddd-cron .
-
      - run:
          name: download build log2timeline docker
          command: |
-         docker pull log2timeline/plaso
+           docker pull log2timeline/plaso
 
     
        
