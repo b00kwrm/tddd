@@ -5,26 +5,28 @@
 # DOCKER_PASS
 # DOCKER_REPO
 
-dependencies:
-  override:
-    - docker info
-    - docker build -t b00kwrm/tddd-cron .
+version: 2
 
-machine:
-  python:
-    version: 3.5.2
-  services:
-    - docker
+jobs:
+  build:
+    docker:
+      -image: circleci/python:latest
 
-test:
-  override:
-    - docker run -d -b00kwrm/hello
 
-deployment:
-  hub:
-    branch: master
-    commands:
-    - docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS
-    - docker push b00kwrm/tddd-cron
+    steps:
+      - checkout
+
+      - run:
+          name: build docker container with target os
+	  command: |
+	    docker build -t b00kwrm/tddd-cron .
+
+     - run:
+         name: download build log2timeline docker
+	 command: |
+	 docker pull log2timeline/plaso
+
+    
+       
 
 
