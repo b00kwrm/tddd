@@ -11,13 +11,13 @@ jobs:
 
       - run:
           name: build docker container with target os
-	  command: |
-	    docker build -t b00kwrm/tddd-cron .
+          command: |
+            docker build -t b00kwrm/tddd-cron .
 
      - run:
          name: download build log2timeline docker
-	 command: |
-	 docker pull log2timeline/plaso
+         command: |
+         docker pull log2timeline/plaso
 
     
        
