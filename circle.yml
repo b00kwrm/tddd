@@ -1,0 +1,30 @@
+# These environmental variables must be set in CircleCI UI
+#
+# DOCKER_EMAIL	login info for docker hub
+# DOCKER_USER
+# DOCKER_PASS
+# DOCKER_REPO
+
+dependencies:
+  override:
+    - docker info
+    - docker build -t b00kwrm/tddd-cron .
+
+machine:
+  python:
+    version: 3.5.2
+  services:
+    - docker
+
+test:
+  override:
+    - docker run -d -b00kwrm/hello
+
+deployment:
+  hub:
+    branch: master
+    commands:
+    - docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS
+    - docker push b00kwrm/tddd-cron
+
+
