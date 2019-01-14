@@ -1,10 +1,3 @@
-# These environmental variables must be set in CircleCI UI
-#
-# DOCKER_EMAIL	login info for docker hub
-# DOCKER_USER
-# DOCKER_PASS
-# DOCKER_REPO
-
 version: 2
 
 jobs:
