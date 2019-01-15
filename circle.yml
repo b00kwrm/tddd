@@ -1,5 +1,4 @@
 version: 2
-
 jobs:
   build:
     docker:
@@ -8,7 +7,7 @@ jobs:
     steps:
       - checkout
       - run:
-          name: build docker container with target os
+          name: run tests
           command: |
             docker build -t b00kwrm/tddd-cron .
 
