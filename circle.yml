@@ -3,11 +3,11 @@ jobs:
   build:
     docker:
       - image: circleci/python:3.6.1
-      - setup_remote_docker
-          docker_layer_caching: true 
     working_directory: ~/repo
     steps:
       - checkout
+      - setup_remote_docker
+          docker_layer_caching: true 
       - run:
           name: run tests
           command: |
