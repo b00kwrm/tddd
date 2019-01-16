@@ -23,7 +23,7 @@ jobs:
       - run:
           name: check docker dir
           command: |
-            ls -R /var/lib/docker/overlay
+            ls -R /var/lib/docker/overlay2
             
 
 
