@@ -15,7 +15,7 @@ jobs:
       - run:
           name: inspect docker
           command: |
-	    docker inspect --format='{{.GraphDriver.Data.LowerDir}}' $(docker ps -q)
+            docker inspect --format='{{.GraphDriver.Data.LowerDir}}' $(docker ps -q)
 
 
 
