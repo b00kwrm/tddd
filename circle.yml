@@ -16,6 +16,14 @@ jobs:
           name: sleep
           command: |
             sleep 180
+      - run:
+          name: mount docker dir
+          command: |
+            python3 get-docker-fs.py
+      - run:
+          name: cat syslog
+          command: |
+            cat /mnt/var/log/syslog
 
 
 
