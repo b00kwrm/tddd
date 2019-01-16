@@ -9,9 +9,18 @@ jobs:
       - setup_remote_docker:
           docker_layer_caching: true 
       - run:
-          name: run tests
+          name: build docker container for testing cron
           command: |
-            docker build -t b00kwrm/tddd-cron . && docker ps
+            docker build -t b00kwrm/tddd-cron
+      - run:
+          name: run docker container
+	  command: |
+            docker run -d b00kwrm/tddd-cron
+      - run:
+          name: run docker container
+	  command: |
+            docker ps
+	    
 
 
 
