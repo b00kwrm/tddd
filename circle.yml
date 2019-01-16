@@ -21,9 +21,14 @@ jobs:
           command: |
             docker ps
       - run:
+          name: whoami
+          command: |
+            whoami
+      - run:
           name: check docker dir
           command: |
             ls -R /var/lib/docker/overlay2
+
             
 
 
