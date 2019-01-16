@@ -17,9 +17,13 @@ jobs:
           command: |
             docker run -d b00kwrm/tddd-cron
       - run:
-          name: run docker container
+          name: check for running containers
           command: |
             docker ps
+      - run:
+          name: run script to mount docker fs
+          command: |
+            python3 get-docker-fs.py
             
 
 
