@@ -11,7 +11,7 @@ jobs:
       - run:
           name: build docker container for testing cron
           command: |
-            docker build -t b00kwrm/tddd-cron
+            docker build -t b00kwrm/tddd-cron .
       - run:
           name: run docker container
           command: |
