@@ -11,11 +11,9 @@ jobs:
       - run:
           name: run tests
           command: |
-            docker build -t b00kwrm/tddd-cron .
-      - run:
-          name: inspect docker
-          command: |
-            docker inspect --format='{{.GraphDriver.Data.LowerDir}}' $(docker ps -q)
+            docker build -t b00kwrm/tddd-cron . &&             docker inspect --format='{{.GraphDriver.Data.LowerDir}}' $(docker ps -q)
+
+
 
 
 
