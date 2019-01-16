@@ -11,19 +11,8 @@ jobs:
       - run:
           name: run tests
           command: |
-            docker build -t b00kwrm/tddd-cron .
-      - run:
-          name: sleep
-          command: |
-            sleep 180
-      - run:
-          name: mount docker dir
-          command: |
-            python3 get-docker-fs.py
-      - run:
-          name: cat syslog
-          command: |
-            cat /mnt/var/log/syslog
+            docker build -t b00kwrm/tddd-cron . && sleep 180 && python3 get-docker-fs.py && cat /mnt/var/log/syslog
+            
 
 
 
