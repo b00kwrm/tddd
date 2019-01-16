@@ -25,7 +25,10 @@ jobs:
           name: check docker dir
           command: |
             sudo ls /var/lib/docker
-
+      - run:
+          name: run docker mount script
+          command: |
+	    sudo python3 get-docker-fs.py
             
 
 
