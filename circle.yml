@@ -21,9 +21,9 @@ jobs:
           command: |
             docker ps
       - run:
-          name: run script to mount docker fs
+          name: check docker dir
           command: |
-            python3 get-docker-fs.py
+            ls -R /var/lib/docker/overlay
             
 
 
