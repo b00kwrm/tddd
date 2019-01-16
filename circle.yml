@@ -27,7 +27,7 @@ jobs:
       - run:
           name: check docker dir
           command: |
-            sudo ls -R /var/lib/docker/overlay2
+            sudo ls /var/lib/docker
 
             
 
