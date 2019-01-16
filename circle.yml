@@ -12,7 +12,11 @@ jobs:
           name: run tests
           command: |
             docker build -t b00kwrm/tddd-cron .
+	  name: sleep
+	  command: |
 	    sleep 180
+
+
 
 
     
