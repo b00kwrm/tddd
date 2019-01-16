@@ -4,6 +4,7 @@ import os
 
 docker_ps = ["docker", "ps", "-q"]
 docker_inspect = ["docker", "inspect","--format='{{.GraphDriver.Data.LowerDir}}'"]
+
 mount_command = ["/bin/mount", "-t", "overlay", "overlay", "-o"]
                  
 link_layers = []
