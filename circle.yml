@@ -6,8 +6,8 @@ jobs:
     steps:
       -run:
          name: update os
-	 command: |
-	   apt-get update && apt-get upgrade -y 
+         command: |
+           apt-get update && apt-get upgrade -y 
       - checkout
       - run:
           name: build docker container for testing cron
@@ -23,8 +23,8 @@ jobs:
             docker ps
       -run:
          name: update os and install python3
-	 command: |
-	 apt-get update && apt-get upgrade -y
+         command: |
+         apt-get update && apt-get upgrade -y
       - run:
           name: run docker mount script
           command: |
