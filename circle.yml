@@ -8,7 +8,7 @@ jobs:
       - run:
           name: update os
           command: |
-            apt-get update && apt-get upgrade -y 
+            sudo apt-get update && apt-get upgrade -y 
       - run:
           name: build docker container for testing cron
           command: |
