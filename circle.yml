@@ -28,7 +28,7 @@ jobs:
       - run:
           name: ls /mnt
           command: |
-            sudo ls
+            sudo ls /mnt
       - run:
           name: run docker log2timeline on /mnt
           command: |
