@@ -26,6 +26,10 @@ jobs:
           command: |
             sudo python3 get-docker-fs.py
       - run:
+          name: ls /mnt
+          command: |
+            sudo ls
+      - run:
           name: run docker log2timeline on /mnt
           command: |
             docker run -v /tmp/:/data log2timeline/plaso log2timeline.py /data/tddd-cron.plaso /mnt
