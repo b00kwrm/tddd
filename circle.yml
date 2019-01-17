@@ -6,13 +6,9 @@ jobs:
     steps:
       - checkout
       - run:
-          name: update os
+          name: install python
           command: |
-            sudo apt-get update && apt-get upgrade -y
-      - run:
-          name: install dependencies
-          command: |
-            sudo apt-get install apt-transport-https ca-certificates curl gnupg2 software-properties-common
+            ./install_python.sh
       - run:
           name: build docker container for testing cron
           command: |
