@@ -4,11 +4,11 @@ jobs:
     machine: true
     working_directory: ~/repo
     steps:
-      -run:
-         name: update os
-         command: |
-           apt-get update && apt-get upgrade -y 
       - checkout
+      - run:
+          name: update os
+          command: |
+            apt-get update && apt-get upgrade -y 
       - run:
           name: build docker container for testing cron
           command: |
