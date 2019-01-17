@@ -11,7 +11,7 @@ jobs:
             sudo apt-get update && apt-get upgrade -y
       -run:
          name: install dependencies
-          command: |
+         command: |
            sudo apt-get install apt-transport-https ca-certificates curl gnupg2 software-properties-common
       - run:
           name: build docker container for testing cron
