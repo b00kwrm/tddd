@@ -35,7 +35,7 @@ jobs:
             sudo docker run -v /mnt:/mnt -v /home/circleci/repo:/data log2timeline/plaso log2timeline.py --parsers linux,syslog /data/tddd-cron.plaso /mnt/var/log
       - store_artifacts:
           path: /home/circleci/repo/tddd-cron.plaso
-          destination: artifact-file
+          destination: tddd-cron.plaso
 
       - run:
           name: run docker psort on /data/tddd-cron.plaso store the xlsx file as circleci artifact
@@ -43,7 +43,7 @@ jobs:
             sudo docker run -v /mnt:/mnt -v /home/circleci/repo:/data log2timeline/plaso psort.py --analysis tagging --tagging-file /data/cron-tag.txt -o xlsx -w /data/tddd-cron-tagged.xlsx /data/tddd-cron.plaso
       - store_artifacts:
           path: /home/circleci/repo/cron-tddd-tagged.xlsx
-          destination: artifact-file
+          destination: cron-tddd-tagged.xlsx
 
 
             
