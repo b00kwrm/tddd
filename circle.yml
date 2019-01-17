@@ -42,8 +42,8 @@ jobs:
           command: |
             sudo docker run -v /mnt:/mnt -v /home/circleci/repo:/data log2timeline/plaso psort.py --analysis tagging --tagging-file /data/cron-tag.txt -o xlsx -w /data/tddd-cron-tagged.xlsx /data/tddd-cron.plaso
       - store_artifacts:
-          path: /home/circleci/repo/cron-tddd-tagged.xlsx
-          destination: cron-tddd-tagged.xlsx
+          path: /home/circleci/repo/tddd-cron-tagged.xlsx
+          destination: tddd-cron-tagged.xlsx
 
 
             
