@@ -30,9 +30,14 @@ jobs:
           command: |
             pwd
       - run:
-          name: run docker log2timeline on /mnt
+          name: run docker log2timeline on /mnt/var/log
           command: |
             sudo docker run -v /mnt:/mnt -v /home/circleci/repo:/data log2timeline/plaso log2timeline.py --parsers linux,syslog /data/tddd-cron.plaso /mnt/var/log
+      - run:
+          name: run docker psort on /data/tddd-cron.plaso
+          command: |
+            sudo docker run -v /mnt:/mnt -v /home/circleci/repo:/data log2timeline/plaso psort.py --analysis tagging --tagging-file /data/cron-tag.txt -o xlsx -w /data/cron-tddd2.xlsx /data/cron-tddd.plaso
+
             
 
 
