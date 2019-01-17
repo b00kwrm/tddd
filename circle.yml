@@ -30,13 +30,21 @@ jobs:
           command: |
             pwd
       - run:
-          name: run docker log2timeline on /mnt/var/log
+          name: run docker log2timeline on /mnt/var/log store the plaso file as circleci artifact
           command: |
             sudo docker run -v /mnt:/mnt -v /home/circleci/repo:/data log2timeline/plaso log2timeline.py --parsers linux,syslog /data/tddd-cron.plaso /mnt/var/log
+      - store_artifacts:
+          path: /home/circleci/repo/tddd-cron.plaso
+          destination: artifact-file
+
       - run:
-          name: run docker psort on /data/tddd-cron.plaso
+          name: run docker psort on /data/tddd-cron.plaso store the xlsx file as circleci artifact
           command: |
-            sudo docker run -v /mnt:/mnt -v /home/circleci/repo:/data log2timeline/plaso psort.py --analysis tagging --tagging-file /data/cron-tag.txt -o xlsx -w /data/cron-tddd2.xlsx /data/cron-tddd.plaso
+            sudo docker run -v /mnt:/mnt -v /home/circleci/repo:/data log2timeline/plaso psort.py --analysis tagging --tagging-file /data/cron-tag.txt -o xlsx -w /data/tddd-cron-tagged.xlsx /data/tddd-cron.plaso
+      - store_artifacts:
+          path: /home/circleci/repo/cron-tddd-tagged.xlsx
+          destination: artifact-file
+
 
             
 
