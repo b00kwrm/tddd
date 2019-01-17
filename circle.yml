@@ -32,7 +32,7 @@ jobs:
       - run:
           name: run docker log2timeline on /mnt
           command: |
-            sudo docker run -v /tmp/:/data log2timeline/plaso log2timeline.py /data/tddd-cron.plaso /mnt
+            docker run -v /tmp/:/data -v /mnt:/mnt log2timeline/plaso log2timeline.py /data/tddd-cron.plaso /mnt
             
 
 
