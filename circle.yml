@@ -4,6 +4,10 @@ jobs:
     machine: true
     working_directory: ~/repo
     steps:
+      -run:
+         name: update os
+	 command: |
+	   apt-get update && apt-get upgrade -y 
       - checkout
       - run:
           name: build docker container for testing cron
@@ -17,14 +21,10 @@ jobs:
           name: check for running containers
           command: |
             docker ps
-      - run:
-          name: whoami
-          command: |
-            whoami
-      - run:
-          name: check docker dir
-          command: |
-            sudo ls /var/lib/docker
+      -run:
+         name: update os and install python3
+	 command: |
+	 apt-get update && apt-get upgrade -y
       - run:
           name: run docker mount script
           command: |
