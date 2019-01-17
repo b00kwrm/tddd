@@ -26,9 +26,9 @@ jobs:
           command: |
             sudo python3 get-docker-fs.py
       - run:
-          name: ls /mnt
+          name: pwd
           command: |
-            sudo ls /mnt
+            pwd
       - run:
           name: run docker log2timeline on /mnt
           command: |
