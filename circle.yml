@@ -32,7 +32,7 @@ jobs:
       - run:
           name: pull plaso docker
           command: |
-            docker pull log2timline/plaso
+            docker pull log2timeline/plaso
       - run:
           name: run docker log2timeline on /mnt/var/log store the plaso file as circleci artifact
           command: |
