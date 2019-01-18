@@ -26,9 +26,9 @@ jobs:
           command: |
             sudo python3 get-docker-fs.py
       - run:
-          name: pwd
+          name: sleep for 3 minutes
           command: |
-            pwd
+            sleep 180
       - run:
           name: run docker log2timeline on /mnt/var/log store the plaso file as circleci artifact
           command: |
