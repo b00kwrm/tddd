@@ -30,6 +30,10 @@ jobs:
           command: |
             sleep 180
       - run:
+          name: pull plaso docker
+          command: |
+            docker pull log2timline/plaso
+      - run:
           name: run docker log2timeline on /mnt/var/log store the plaso file as circleci artifact
           command: |
             sudo docker run -v /mnt:/mnt -v /home/circleci/repo:/data log2timeline/plaso log2timeline.py --parsers linux,syslog /data/tddd-cron.plaso /mnt/var/log
