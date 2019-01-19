@@ -30,6 +30,10 @@ jobs:
           command: |
             sleep 180
       - run:
+          name: ls -lh
+          command: |
+            ls -lh
+      - run:
           name: build custom plaso docker container
           command: |
             docker build -f customplaso_docker -t b00kwrm/customplaso .
