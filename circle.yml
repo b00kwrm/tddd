@@ -63,7 +63,7 @@ jobs:
       - run:
           name: test csv for tag
           command: |
-            python3 test_for_tag.py
+            sudo python3 test_for_tag.py
           
 #      - run:
 #          name: push to docker hub
