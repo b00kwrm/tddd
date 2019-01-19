@@ -30,11 +30,6 @@ jobs:
           command: |
             sleep 180
       - run:
-          name: pull plaso docker
-          command: |
-            docker pull log2timeline/plaso
-            
-      - run:
           name: build custom plaso docker container
           command: |
             docker build -f customplaso_docker -t b00kwrm/customplaso .
@@ -47,7 +42,7 @@ jobs:
           destination: tddd-cron.plaso
 
       - run:
-          name: run docker psort on /data/tddd-cron.plaso store the xlsx file as circleci artifact
+          name: run docker psort on /data/tddd-cron.plaso store the xlsx file as circleci artifact;
           command: |
             sudo docker run -v /mnt:/mnt -v /home/circleci/repo:/data b00kwrm/customplaso psort.py --analysis tagging --tagging-file /usr/local/share/plaso/cron-tag.txt -o xlsx -w /data/tddd-cron-tagged.xlsx /data/tddd-cron.plaso
       - store_artifacts:
@@ -57,7 +52,7 @@ jobs:
       - run:
           name: run docker psort on /data/tddd-cron.plaso store the csv file as circleci artifact
           command: |
-            sudo docker run -v /mnt:/mnt -v /home/circleci/repo:/data log2timeline/plaso psort.py --analysis tagging --tagging-file /data/cron-tag.txt -o l2tcsv -w /data/tddd-cron-tagged.csv /data/tddd-cron.plaso
+            sudo docker run -v /mnt:/mnt -v /home/circleci/repo:/data b00kwrm/cutomplaso psort.py --analysis tagging --tagging-file /usr/local/share/plaso/cron-tag.txt -o l2tcsv -w /data/tddd-cron-tagged.csv /data/tddd-cron.plaso
       - store_artifacts:
           path: /home/circleci/repo/tddd-cron-tagged.csv
           destination: tddd-cron-tagged.csv
