@@ -65,10 +65,10 @@ jobs:
           command: |
             python test_for_tag.py
           
-#      - run:
-#          name: push to docker hub
-#          command: |
-#            docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS && docker push b00kwrm/customplaso:cron
+      - run:
+          name: push to docker hub
+          command: |
+            docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS && docker push b00kwrm/customplaso:cron
             
 
             
