@@ -49,6 +49,15 @@ jobs:
           path: /home/circleci/repo/tddd-cron-tagged.xlsx
           destination: tddd-cron-tagged.xlsx
 
+      - run:
+          name: run docker psort on /data/tddd-cron.plaso store the csv file as circleci artifact
+          command: |
+            sudo docker run -v /mnt:/mnt -v /home/circleci/repo:/data log2timeline/plaso psort.py --analysis tagging --tagging-file /data/cron-tag.txt -o l2tcsv -w /data/tddd-cron-tagged.csv /data/tddd-cron.plaso
+      - store_artifacts:
+          path: /home/circleci/repo/tddd-cron-tagged.csv
+          destination: tddd-cron-tagged.csv
+	  
+
 
             
 
