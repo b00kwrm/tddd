@@ -1,4 +1,4 @@
 FROM log2timeline/plaso:latest
 CMD mkdir /usr/local/share/plaso
-COPY ./cron-tag.txt /usr/local/share/plaso
+COPY ./cron-tag.txt /usr/local/share/plaso/
 
