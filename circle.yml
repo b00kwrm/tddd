@@ -60,6 +60,10 @@ jobs:
       - store_artifacts:
           path: /home/circleci/repo/tddd-cron-tagged.csv
           destination: tddd-cron-tagged.csv
+      - run:
+          name: test csv for tag
+          command: |
+            python3 test_for_tag.py
           
 #      - run:
 #          name: push to docker hub
