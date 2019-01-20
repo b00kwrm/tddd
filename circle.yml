@@ -70,6 +70,10 @@ jobs:
     working_directory: ~/repo
     steps:
       - run:
+          name: build custom plaso docker container
+          command: |
+            docker build -f customplaso_docker -t b00kwrm/customplaso .    
+      - run:
           name: push to docker hub
           command: |
             echo $DOCKER_PASS | docker login -u $DOCKER_USER --password-stdin
