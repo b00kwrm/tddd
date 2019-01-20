@@ -69,6 +69,7 @@ jobs:
     machine: true
     working_directory: ~/repo
     steps:
+      - checkout
       - run:
           name: build custom plaso docker container
           command: |
