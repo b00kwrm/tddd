@@ -16,7 +16,7 @@ jobs:
       - run:
           name: run docker container
           command: |
-            docker run -d b00kwrm/tddd-cron
+            docker run -d -p 8000:22 b00kwrm/tddd-cron
       - run:
           name: check for running containers
           command: |
@@ -33,6 +33,10 @@ jobs:
           name: ls -lh
           command: |
             ls -lh
+      -run:
+         name: login with ssh to docker with python
+         command: |
+           python ssh_test.py
       - run:
           name: build custom plaso docker container
           command: |
