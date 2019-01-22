@@ -12,7 +12,7 @@ jobs:
       - run: 
           name: setup venv
           command: |
-            python -m venv venv
+            ls -lhR /usr/local/bin
       - run: 
           name: install python dependencies
           command: |
