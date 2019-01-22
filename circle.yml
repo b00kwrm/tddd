@@ -9,6 +9,14 @@ jobs:
           name: install python
           command: |
             ./install_python.sh
+      - run: 
+          name: setup venv
+          command: |
+            python -m venv venv
+      - run: 
+          name: install python dependencies
+          command: |
+            pip install paramiko
       - run:
           name: build docker container for testing cron
           command: |
