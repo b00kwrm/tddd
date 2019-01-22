@@ -33,7 +33,7 @@ jobs:
           name: ls -lh
           command: |
             ls -lh
-      -run:
+      - run:
          name: login with ssh to docker with python
          command: |
            python ssh_test.py
