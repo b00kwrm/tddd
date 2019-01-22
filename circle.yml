@@ -36,7 +36,7 @@ jobs:
       - run:
           name: run docker mount script
           command: |
-            sudo source venv/bin/activate && python get-docker-fs.py
+            sudo /usr/local/bin/python3.7 get-docker-fs.py
       - run:
           name: sleep for 3 minutes
           command: |
