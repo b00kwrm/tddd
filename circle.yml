@@ -12,7 +12,11 @@ jobs:
       - run: 
           name: setup venv
           command: |
-            ls -lhR /usr/local/bin
+            /usr/local/bin/python3.7 -m venv venv
+      - run: 
+          name: activate venv
+          command: |
+            source venv/bin/activate
       - run: 
           name: install python dependencies
           command: |
@@ -32,7 +36,7 @@ jobs:
       - run:
           name: run docker mount script
           command: |
-            sudo python3 get-docker-fs.py
+            sudo python get-docker-fs.py
       - run:
           name: sleep for 3 minutes
           command: |
