@@ -12,7 +12,9 @@ for line in lines:
         tagged_lines.append(line['notes'])
     if line['notes'] == 'T1078_valid_accounts':
         tagged_lines.append(line['notes'])
+    if line['notes'] == 'T1215_Kernel_Modules_and_Extensions':
+        tagged_lines.append(line['notes'])
 
 assert 'T1168_local_job_scheduling' in tagged_lines
 assert 'T1078_valid_accounts' in tagged_lines
-        
+assert 'T1215_Kernel_Modules_and_Extensions' in tagged_lines        
