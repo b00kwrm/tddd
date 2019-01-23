@@ -13,7 +13,7 @@ class AllowAnythingPolicy(paramiko.MissingHostKeyPolicy):
 
 client = paramiko.SSHClient()
 client.set_missing_host_key_policy(AllowAnythingPolicy())
-client.connect(hostname, port=port, username=user password=password)
+client.connect(hostname, port=port, username=user, password=password)
 
     
 
