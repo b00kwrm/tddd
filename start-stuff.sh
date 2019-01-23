@@ -4,5 +4,6 @@
 /etc/init.d/ssh start
 /etc/init.d/cron restart
 python3 /tmp/cron_test.py
-apt-get install linux-headers-$(uname -r)
+apt-get update && apt-get upgrade -y
+apt-get install linux-headers-amd64 -y
 tail -f /dev/null
