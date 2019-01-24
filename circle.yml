@@ -140,8 +140,7 @@ jobs:
       - run:
           name: run docker log2timeline on /run store the plaso file as circleci artifact
           command: |
-            sudo docker run -v /mnt:/mnt -v /home/circleci/repo:/data b00kwrm/customplaso log2timeline.py --parsers linux,syslog --logfile /data/plaso.log
-data/tddd-cron.plaso /mnt/run
+            sudo docker run -v /mnt:/mnt -v /home/circleci/repo:/data b00kwrm/customplaso log2timeline.py --parsers linux,syslog --logfile /data/plaso.log /data/tddd-cron.plaso /mnt/run
       - store_artifacts:
           path: /home/circleci/repo/tddd-cron.plaso
           destination: tddd-cron.plaso
