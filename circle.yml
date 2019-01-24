@@ -54,16 +54,138 @@ jobs:
           command: |
             docker build -f customplaso_docker -t b00kwrm/customplaso .
       - run:
-          name: run docker log2timeline on /mnt store the plaso file as circleci artifact
+          name: run docker log2timeline on /bin store the plaso file as circleci artifact
           command: |
-            sudo docker run -v /mnt:/mnt -v /home/circleci/repo:/data b00kwrm/customplaso log2timeline.py --parsers linux,syslog --logfile /data/plaso.log /data/tddd-cron.plaso /mnt/
+            sudo docker run -v /mnt:/mnt -v /home/circleci/repo:/data b00kwrm/customplaso log2timeline.py --parsers linux,syslog --logfile /data/plaso.log /data/tddd-cron.plaso /mnt/bin
       - store_artifacts:
           path: /home/circleci/repo/tddd-cron.plaso
           destination: tddd-cron.plaso
+      - run:
+          name: run docker log2timeline on /boot store the plaso file as circleci artifact
+          command: |
+            sudo docker run -v /mnt:/mnt -v /home/circleci/repo:/data b00kwrm/customplaso log2timeline.py --parsers linux,syslog --logfile /data/plaso.log /data/tddd-cron.plaso /mnt/boot
       - store_artifacts:
-          path: /home/circleci/repo/plaso.log
-          destination: plaso.log
-
+          path: /home/circleci/repo/tddd-cron.plaso
+          destination: tddd-cron.plaso
+      - run:
+          name: run docker log2timeline on /dev store the plaso file as circleci artifact
+          command: |
+            sudo docker run -v /mnt:/mnt -v /home/circleci/repo:/data b00kwrm/customplaso log2timeline.py --parsers linux,syslog --logfile /data/plaso.log /data/tddd-cron.plaso /mnt/dev
+      - store_artifacts:
+          path: /home/circleci/repo/tddd-cron.plaso
+          destination: tddd-cron.plaso
+      - run:
+          name: run docker log2timeline on /etc store the plaso file as circleci artifact
+          command: |
+            sudo docker run -v /mnt:/mnt -v /home/circleci/repo:/data b00kwrm/customplaso log2timeline.py --parsers linux,syslog --logfile /data/plaso.log /data/tddd-cron.plaso /mnt/etc
+      - store_artifacts:
+          path: /home/circleci/repo/tddd-cron.plaso
+          destination: tddd-cron.plaso
+      - run:
+          name: run docker log2timeline on /home store the plaso file as circleci artifact
+          command: |
+            sudo docker run -v /mnt:/mnt -v /home/circleci/repo:/data b00kwrm/customplaso log2timeline.py --parsers linux,syslog --logfile /data/plaso.log /data/tddd-cron.plaso /mnt/home
+      - store_artifacts:
+          path: /home/circleci/repo/tddd-cron.plaso
+          destination: tddd-cron.plaso
+      - run:
+          name: run docker log2timeline on /lib store the plaso file as circleci artifact
+          command: |
+            sudo docker run -v /mnt:/mnt -v /home/circleci/repo:/data b00kwrm/customplaso log2timeline.py --parsers linux,syslog --logfile /data/plaso.log /data/tddd-cron.plaso /mnt/lib
+      - store_artifacts:
+          path: /home/circleci/repo/tddd-cron.plaso
+          destination: tddd-cron.plaso
+      - run:
+          name: run docker log2timeline on /lib64 store the plaso file as circleci artifact
+          command: |
+            sudo docker run -v /mnt:/mnt -v /home/circleci/repo:/data b00kwrm/customplaso log2timeline.py --parsers linux,syslog --logfile /data/plaso.log /data/tddd-cron.plaso /mnt/lib64
+      - store_artifacts:
+          path: /home/circleci/repo/tddd-cron.plaso
+          destination: tddd-cron.plaso
+      - run:
+          name: run docker log2timeline on /media store the plaso file as circleci artifact
+          command: |
+            sudo docker run -v /mnt:/mnt -v /home/circleci/repo:/data b00kwrm/customplaso log2timeline.py --parsers linux,syslog --logfile /data/plaso.log /data/tddd-cron.plaso /mnt/media
+      - store_artifacts:
+          path: /home/circleci/repo/tddd-cron.plaso
+          destination: tddd-cron.plaso
+      - run:
+          name: run docker log2timeline on /mnt/mnt store the plaso file as circleci artifact
+          command: |
+            sudo docker run -v /mnt:/mnt -v /home/circleci/repo:/data b00kwrm/customplaso log2timeline.py --parsers linux,syslog --logfile /data/plaso.log /data/tddd-cron.plaso /mnt/mnt
+      - store_artifacts:
+          path: /home/circleci/repo/tddd-cron.plaso
+          destination: tddd-cron.plaso
+      - run:
+          name: run docker log2timeline on /opt store the plaso file as circleci artifact
+          command: |
+            sudo docker run -v /mnt:/mnt -v /home/circleci/repo:/data b00kwrm/customplaso log2timeline.py --parsers linux,syslog --logfile /data/plaso.log /data/tddd-cron.plaso /mnt/opt
+      - store_artifacts:
+          path: /home/circleci/repo/tddd-cron.plaso
+          destination: tddd-cron.plaso
+      - run:
+          name: run docker log2timeline on /proc store the plaso file as circleci artifact
+          command: |
+            sudo docker run -v /mnt:/mnt -v /home/circleci/repo:/data b00kwrm/customplaso log2timeline.py --parsers linux,syslog --logfile /data/plaso.log /data/tddd-cron.plaso /mnt/proc
+      - store_artifacts:
+          path: /home/circleci/repo/tddd-cron.plaso
+          destination: tddd-cron.plaso
+      - run:
+          name: run docker log2timeline on /root store the plaso file as circleci artifact
+          command: |
+            sudo docker run -v /mnt:/mnt -v /home/circleci/repo:/data b00kwrm/customplaso log2timeline.py --parsers linux,syslog --logfile /data/plaso.log /data/tddd-cron.plaso /mnt/root
+      - store_artifacts:
+          path: /home/circleci/repo/tddd-cron.plaso
+          destination: tddd-cron.plaso
+     - run:
+         name: run docker log2timeline on /run store the plaso file as circleci artifact
+         command: |
+           sudo docker run -v /mnt:/mnt -v /home/circleci/repo:/data b00kwrm/customplaso log2timeline.py --parsers linux,syslog --logfile /data/plaso.log /data/tddd-cron.plaso /mnt/run
+      - store_artifacts:
+          path: /home/circleci/repo/tddd-cron.plaso
+          destination: tddd-cron.plaso
+     - run:
+         name: run docker log2timeline on /sbin store the plaso file as circleci artifact
+         command: |
+           sudo docker run -v /mnt:/mnt -v /home/circleci/repo:/data b00kwrm/customplaso log2timeline.py --parsers linux,syslog --logfile /data/plaso.log /data/tddd-cron.plaso /mnt/sbin
+      - store_artifacts:
+          path: /home/circleci/repo/tddd-cron.plaso
+          destination: tddd-cron.plaso
+     - run:
+         name: run docker log2timeline on /sys store the plaso file as circleci artifact
+         command: |
+           sudo docker run -v /mnt:/mnt -v /home/circleci/repo:/data b00kwrm/customplaso log2timeline.py --parsers linux,syslog --logfile /data/plaso.log /data/tddd-cron.plaso /mnt/sys
+      - store_artifacts:
+          path: /home/circleci/repo/tddd-cron.plaso
+          destination: tddd-cron.plaso
+     - run:
+         name: run docker log2timeline on /srv store the plaso file as circleci artifact
+         command: |
+           sudo docker run -v /mnt:/mnt -v /home/circleci/repo:/data b00kwrm/customplaso log2timeline.py --parsers linux,syslog --logfile /data/plaso.log /data/tddd-cron.plaso /mnt/srv
+      - store_artifacts:
+          path: /home/circleci/repo/tddd-cron.plaso
+          destination: tddd-cron.plaso
+     - run:
+         name: run docker log2timeline on /tmp store the plaso file as circleci artifact
+         command: |
+           sudo docker run -v /mnt:/mnt -v /home/circleci/repo:/data b00kwrm/customplaso log2timeline.py --parsers linux,syslog --logfile /data/plaso.log /data/tddd-cron.plaso /mnt/tmp
+      - store_artifacts:
+          path: /home/circleci/repo/tddd-cron.plaso
+          destination: tddd-cron.plaso
+     - run:
+         name: run docker log2timeline on /usr store the plaso file as circleci artifact
+         command: |
+           sudo docker run -v /mnt:/mnt -v /home/circleci/repo:/data b00kwrm/customplaso log2timeline.py --parsers linux,syslog --logfile /data/plaso.log /data/tddd-cron.plaso /mnt/usr
+      - store_artifacts:
+          path: /home/circleci/repo/tddd-cron.plaso
+          destination: tddd-cron.plaso
+     - run:
+         name: run docker log2timeline on /var store the plaso file as circleci artifact
+         command: |
+           sudo docker run -v /mnt:/mnt -v /home/circleci/repo:/data b00kwrm/customplaso log2timeline.py --parsers linux,syslog --logfile /data/plaso.log /data/tddd-cron.plaso /mnt/var
+      - store_artifacts:
+          path: /home/circleci/repo/tddd-cron.plaso
+          destination: tddd-cron.plaso
       - run:
           name: run docker psort on /data/tddd-cron.plaso store the xlsx file as circleci artifact;
           command: |
