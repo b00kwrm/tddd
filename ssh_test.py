@@ -1,6 +1,7 @@
 # https://github.com/brandon-rhodes/fopnp/blob/2c1d0fcb97560394d0fa52eead317567b1f02504/py3/chapter16/ssh_simple.py
 
 import paramiko
+import sleep
 
 user = 'oracle'
 password = 'ginger'
@@ -16,5 +17,29 @@ client.set_missing_host_key_policy(AllowAnythingPolicy())
 client.connect(hostname, port=port, username=user, password=password)
 stdin, stdout, stderr = client.exec_command('ps aux')
 stdin, stdout, stderr = client.exec_command('exit')
-    
+
+time.sleep(15)
+
+client = paramiko.SSHClient()
+client.set_missing_host_key_policy(AllowAnythingPolicy())
+client.connect(hostname, port=port, username=user, password=password)
+stdin, stdout, stderr = client.exec_command('ps aux')
+stdin, stdout, stderr = client.exec_command('exit')
+
+time.sleep(15)
+
+client = paramiko.SSHClient()
+client.set_missing_host_key_policy(AllowAnythingPolicy())
+client.connect(hostname, port=port, username=user, password=password)
+stdin, stdout, stderr = client.exec_command('ps aux')
+stdin, stdout, stderr = client.exec_command('exit')
+
+time.sleep(15)
+
+client = paramiko.SSHClient()
+client.set_missing_host_key_policy(AllowAnythingPolicy())
+client.connect(hostname, port=port, username=user, password=password)
+stdin, stdout, stderr = client.exec_command('ps aux')
+stdin, stdout, stderr = client.exec_command('exit')
+
 
