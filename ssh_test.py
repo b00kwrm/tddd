@@ -16,30 +16,30 @@ client = paramiko.SSHClient()
 client.set_missing_host_key_policy(AllowAnythingPolicy())
 client.connect(hostname, port=port, username=user, password=password)
 stdin, stdout, stderr = client.exec_command('ps aux')
-stdin, stdout, stderr = client.exec_command('exit')
+client.close()
 
-time.sleep(15)
-
-client = paramiko.SSHClient()
-client.set_missing_host_key_policy(AllowAnythingPolicy())
-client.connect(hostname, port=port, username=user, password=password)
-stdin, stdout, stderr = client.exec_command('ps aux')
-stdin, stdout, stderr = client.exec_command('exit')
-
-time.sleep(15)
+time.sleep(5)
 
 client = paramiko.SSHClient()
 client.set_missing_host_key_policy(AllowAnythingPolicy())
 client.connect(hostname, port=port, username=user, password=password)
 stdin, stdout, stderr = client.exec_command('ps aux')
-stdin, stdout, stderr = client.exec_command('exit')
+client.close()
 
-time.sleep(15)
+time.sleep(5)
 
 client = paramiko.SSHClient()
 client.set_missing_host_key_policy(AllowAnythingPolicy())
 client.connect(hostname, port=port, username=user, password=password)
 stdin, stdout, stderr = client.exec_command('ps aux')
-stdin, stdout, stderr = client.exec_command('exit')
+client.close()
+
+time.sleep(5)
+
+client = paramiko.SSHClient()
+client.set_missing_host_key_policy(AllowAnythingPolicy())
+client.connect(hostname, port=port, username=user, password=password)
+stdin, stdout, stderr = client.exec_command('ps aux')
+client.close()
 
 
