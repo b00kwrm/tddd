@@ -16,15 +16,17 @@ client = paramiko.SSHClient()
 client.set_missing_host_key_policy(AllowAnythingPolicy())
 client.connect(hostname, port=port, username=user, password=password)
 stdin, stdout, stderr = client.exec_command('ps aux')
-client.close()
+
 
 time.sleep(5)
 
 client = paramiko.SSHClient()
 client.set_missing_host_key_policy(AllowAnythingPolicy())
 client.connect(hostname, port=port, username=user, password=password)
-stdin, stdout, stderr = client.exec_command('lsmod')
-client.close()
+stdin, stdout, stderr = client.exec_command('lsmod'
+stdin, stdout, stderr = client.exec_command('exit')
+
+
 
 time.sleep(5)
 
