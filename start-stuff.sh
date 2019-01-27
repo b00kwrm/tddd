@@ -1,5 +1,7 @@
 #!/bin/bash
 
+echo 'export HISTTIMEFORMAT="%s "' >> ~/.bashrc
+source ~/.bashrc
 /etc/init.d/rsyslog start
 /etc/init.d/ssh start
 /etc/init.d/cron restart
