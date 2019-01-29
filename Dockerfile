@@ -1,5 +1,5 @@
 FROM debian:latest
-COPY ./cron-test.py /tmp
+COPY ./cron_test.py /tmp
 COPY ./start-stuff.sh /tmp
 COPY ./bash_timestamp.sh /etc/profile.d/
 WORKDIR /tmp
