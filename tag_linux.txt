@@ -9,3 +9,9 @@ T1215_Kernel_Modules_and_Extensions:
 
 T1057_Process_Discovery:
  data_type is "bash:history:command" AND command contains "ps"
+
+T1156_bash_profile_and_bashrc:
+ data_type is "fs:stat" AND filename contains ".bashrc" OR filename contains ".bash_profile"
+
+
+ 
