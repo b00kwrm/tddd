@@ -17,5 +17,8 @@ print(s.before)
 s.sendline('lsmod')
 s.prompt()
 print(s.before)
+s.sendline('echo "w" >> .bashrc')
+s.prompt()
+print(s.before)
 s.logout()
 
