@@ -20,7 +20,7 @@ jobs:
       - run: 
           name: install python dependencies
           command: |
-            pip install paramiko
+            pip install paramiko pexpect
       - run:
           name: build docker container for testing cron
           command: |
@@ -48,7 +48,7 @@ jobs:
       - run:
          name: login with ssh to docker with python
          command: |
-           python ssh_test.py
+           python ssh_pexpect.py
       - run:
           name: build custom plaso docker container
           command: |

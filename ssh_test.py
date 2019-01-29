@@ -15,7 +15,7 @@ class AllowAnythingPolicy(paramiko.MissingHostKeyPolicy):
 client = paramiko.SSHClient()
 client.set_missing_host_key_policy(AllowAnythingPolicy())
 client.connect(hostname, port=port, username=user, password=password)
-stdin, stdout, stderr = client.exec_command('ps aux')
+stdin, stdout, stderr = client.exec_command('/tmp/generate_history.sh')
 
 
 time.sleep(5)
@@ -23,7 +23,7 @@ time.sleep(5)
 client = paramiko.SSHClient()
 client.set_missing_host_key_policy(AllowAnythingPolicy())
 client.connect(hostname, port=port, username=user, password=password)
-stdin, stdout, stderr = client.exec_command('lsmod'
+stdin, stdout, stderr = client.exec_command('lsmod')
 stdin, stdout, stderr = client.exec_command('exit')
 
 
