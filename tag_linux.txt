@@ -5,13 +5,13 @@ T1078_valid_accounts:
  data_type is "syslog:ssh:login"
 
 T1215_Kernel_Modules_and_Extensions:
- data_type is "dpkg:line" AND body contains "install linux-headers"
+ data_type is "dpkg:line" and body contains "install linux-headers"
 
 T1057_Process_Discovery:
- data_type is "bash:history:command" AND command contains "ps"
+ data_type is "bash:history:command" and command contains "ps"
 
 T1156_bash_profile_and_bashrc:
- data_type is "fs:stat" AND (filename contains ".bashrc" or ".bash_profile")
+ data_type is "fs:stat" and (filename contains ".bashrc" or ".bash_profile")
 
 
  
