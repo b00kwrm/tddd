@@ -11,7 +11,7 @@ T1057_Process_Discovery:
  data_type is "bash:history:command" and command contains "ps"
 
 T1156_bash_profile_and_bashrc:
- data_type is "fs:stat" and (filename contains ".bashrc" or ".bash_profile")
+ data_type is "fs:stat" and (filename contains ".bash_profile")
 
 
  
