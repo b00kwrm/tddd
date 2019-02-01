@@ -4,14 +4,16 @@ T1168_local_job_scheduling
 T1078_valid_accounts:
  data_type is "syslog:ssh:login"
 
-T1215_Kernel_Modules_and_Extensions:
- data_type is "dpkg:line" and body contains "install linux-headers"
+T1215_Kernel_Modules_AND_Extensions:
+ data_type is "dpkg:line" AND body contains "install linux-headers"
 
 T1057_Process_Discovery:
- data_type is "bash:history:command" and command contains "ps"
+ data_type is "bash:history:command" AND command contains "ps"
 
-T1156_bash_profile_and_bashrc:
- data_type is "fs:stat" and filename contains ".bashrc"
+T1156_bash_profile_AND_bashrc:
+ data_type is "fs:stat" AND filename contains ".bashrc"
 
+ssh_logs:
+  data_type is "syslog:line" AND (body contains "ssh" or "ssh2" or "sshd")
 
  
