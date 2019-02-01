@@ -11,9 +11,9 @@ T1057_Process_Discovery:
  data_type is "bash:history:command" AND command contains "ps"
 
 T1156_bash_profile_AND_bashrc:
- data_type is "fs:stat" AND filename contains ".bashrc"
+ data_type is "fs:stat" AND (filename contains ".bashrc" or filename contains ".bash_profile")
 
 ssh_logs:
-  data_type is "syslog:line" AND (body contains "ssh" or "ssh2" or "sshd")
+  data_type is "syslog:line" AND (body contains "ssh" or body contains "ssh2" or body contains "sshd")
 
  
