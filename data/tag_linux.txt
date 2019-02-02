@@ -13,7 +13,12 @@ T1057_Process_Discovery:
 T1156_bash_profile_and_bashrc:
  data_type is "fs:stat" AND (filename contains ".bashrc" or filename contains ".bash_profile")
 
+T1136_create_account:
+  data_type is "syslog:line" AND (body contains "useradd" or body contains "new user")
+
 ssh_logs:
   data_type is "syslog:line" AND (body contains "ssh" or body contains "ssh2" or body contains "sshd")
+
+
 
  
