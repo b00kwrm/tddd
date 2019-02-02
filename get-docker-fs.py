@@ -1,3 +1,6 @@
+# This script was inspired by/adapted from
+# https://github.com/google/docker-explorer
+
 import json
 import subprocess
 import os
