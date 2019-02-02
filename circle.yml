@@ -87,7 +87,7 @@ jobs:
       - run:
           name: build custom plaso docker container
           command: |
-            docker build -f customplaso_docker -t b00kwrm/customplaso .    
+            docker build -f docker/customplaso_docker -t b00kwrm/customplaso .    
       - run:
           name: push to docker hub
           command: |
