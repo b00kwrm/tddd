@@ -20,11 +20,11 @@ jobs:
       - run: 
           name: install python dependencies
           command: |
-            pip install paramiko pexpect
+            pip install -r requirements.txt
       - run:
           name: build docker container for testing cron
           command: |
-            docker build -t b00kwrm/tddd-cron .
+            cd docker && docker build -t b00kwrm/tddd-cron .
       - run:
           name: run docker container
           command: |
@@ -38,9 +38,9 @@ jobs:
           command: |
             sudo /usr/local/bin/python3.7 get-docker-fs.py
       - run:
-          name: sleep for 3 minutes
+          name: sleep for 2 minutes
           command: |
-            sleep 180
+            sleep 120
       - run:
           name: ls -lh
           command: |
@@ -48,11 +48,11 @@ jobs:
       - run:
          name: login with ssh to docker with python
          command: |
-           python ssh_pexpect.py
+           python tests/ssh_pexpect.py
       - run:
           name: build custom plaso docker container
           command: |
-            docker build -f customplaso_docker -t b00kwrm/customplaso .
+            cd docker && docker build -f customplaso_docker -t b00kwrm/customplaso .
       - run:
           name: run docker log2timeline on /mnt/var/log store the plaso file as circleci artifact
           command: |
@@ -68,19 +68,12 @@ jobs:
           path: /home/circleci/repo/tddd-cron.plaso
           destination: tddd-cron.plaso
       - run:
-          name: run docker psort on /data/tddd-cron.plaso store the xlsx file as circleci artifact;
+          name: run docker psort on /data/tddd-cron.plaso store the json file as circleci artifact;
           command: |
-            docker run -v /mnt:/mnt -v /home/circleci/repo:/data b00kwrm/customplaso psort.py --analysis tagging --tagging-file /usr/local/share/plaso/tag_linux.txt -o xlsx -w /data/tddd-cron-tagged.xlsx /data/tddd-cron.plaso
+            docker run -v /mnt:/mnt -v /home/circleci/repo:/data b00kwrm/customplaso psort.py --analysis tagging --tagging-file /usr/local/share/plaso/tag_linux.txt -o json -w /data/tddd-cron-tagged.json /data/tddd-cron.plaso
       - store_artifacts:
-          path: /home/circleci/repo/tddd-cron-tagged.xlsx
-          destination: tddd-cron-tagged.xlsx
-      - run:
-          name: run docker psort on /data/tddd-cron.plaso store the csv file as circleci artifact
-          command: |
-            docker run -v /mnt:/mnt -v /home/circleci/repo:/data b00kwrm/customplaso psort.py --analysis tagging --tagging-file /usr/local/share/plaso/tag_linux.txt -o l2tcsv -w /data/tddd-cron-tagged.csv /data/tddd-cron.plaso
-      - store_artifacts:
-          path: /home/circleci/repo/tddd-cron-tagged.csv
-          destination: tddd-cron-tagged.csv
+          path: /home/circleci/repo/tddd-cron-tagged.json
+          destination: tddd-cron-tagged.json
       - run:
           name: test csv for tag
           command: |

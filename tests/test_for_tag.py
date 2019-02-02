@@ -1,13 +1,17 @@
-import csv
+import json
 
 tagged_lines = []
 
-with open('tddd-cron-tagged.csv') as f:
-    reader = csv.DictReader(f)
-    lines = list(reader)
+with open('tddd-cron-tagged.json') as f:
+    reader = f.read()
+    jf = json.loads(reader)
 
 
-for line in lines:
+for event in plaso.keys():
+    if plaso[event].get('tag'):
+        tag_events.append((event, plaso[event]))
+
+for tag_event in tag_events:
     if line['notes'] == 'T1168_local_job_scheduling':
         tagged_lines.append(line['notes'])
     if line['notes'] == 'T1078_valid_accounts':
