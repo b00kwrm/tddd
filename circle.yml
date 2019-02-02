@@ -24,7 +24,7 @@ jobs:
       - run:
           name: build docker container for testing cron
           command: |
-            docker build -t ./data/b00kwrm/tddd-cron .
+            docker build -f data/Dockerfile -t b00kwrm/tddd-cron .
       - run:
           name: run docker container
           command: |
@@ -52,7 +52,7 @@ jobs:
       - run:
           name: build custom plaso docker container
           command: |
-            docker build -f ./docker/customplaso_docker -t b00kwrm/customplaso .
+            docker build -f docker/customplaso_docker -t b00kwrm/customplaso .
       - run:
           name: run docker log2timeline on /mnt/var/log store the plaso file as circleci artifact
           command: |
