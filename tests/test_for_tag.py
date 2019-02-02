@@ -25,6 +25,9 @@ for tag_event in tag_events:
             tagged_lines.append(tag_event[1]["tag"]["labels"][0])
         if tag_event[1]["tag"]["labels"][0] == "T1156_bash_profile_and_bashrc":
             tagged_lines.append(tag_event[1]["tag"]["labels"][0])
+        if tag_event[1]["tag"]["labels"][0] == "T1136_create_account":
+            tagged_lines.append(tag_event[1]["tag"]["labels"][0])
+
 
 # test that the tags got created
 assert "T1168_local_job_scheduling" in tagged_lines
@@ -32,6 +35,7 @@ assert "T1078_valid_accounts" in tagged_lines
 assert "T1215_Kernel_Modules_and_Extensions" in tagged_lines
 assert "T1057_Process_Discovery" in tagged_lines
 assert "T1156_bash_profile_and_bashrc" in tagged_lines
+assert "T1136_create_account" in tagged_lines
 
 tag_set = set(tagged_lines)
 
@@ -46,3 +50,4 @@ assert tag_counts["T1215_Kernel_Modules_and_Extensions"] == 3
 assert tag_counts["T1156_bash_profile_and_bashrc"] == 3
 assert tag_counts["T1078_valid_accounts"] == 1
 assert tag_counts["T1168_local_job_scheduling"] == 1
+assert tag_counts["T1136_create_account"] == 1
