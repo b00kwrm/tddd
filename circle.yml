@@ -77,7 +77,7 @@ jobs:
       - run:
           name: test csv for tag
           command: |
-            python test_for_tag.py
+            python tests/test_for_tag.py
 
   deploy:
     machine: true
