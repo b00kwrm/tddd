@@ -6,8 +6,8 @@ with open("tddd-cron-tagged.json") as f:
     reader = f.read()
     jf = json.loads(reader)
 
-for event in plaso.keys():
-    if plaso[event].get("tag"):
+for event in jf.keys():
+    if jf[event].get("tag"):
         tag_events.append((event, plaso[event]))
 
 for tag_event in tag_events:
