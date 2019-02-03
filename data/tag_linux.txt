@@ -20,7 +20,9 @@ ssh_logs:
   data_type is "syslog:line" AND (body contains "ssh" or body contains "ssh2" or body contains "sshd")
 
 T1098_account_manipulation:
-    data_type is "syslog:line" AND (body contains "new group" or body contains "groupadd" or body contains "to group")
+    data_type is "syslog:line" AND (reporter is "groupadd" or body contains "group added" or body contains "new group")
+    data_type is "syslog:line" AND (reporter is "gpasswd" or body contains "added by root to group")
+    data_type is "syslog:line" AND (reporter is "chpasswd" or body contains "password changed")
 
 
  
