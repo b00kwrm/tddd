@@ -4,6 +4,8 @@
 /etc/init.d/cron restart
 python3 /tmp/cron_test.py
 adduser --disabled-password --gecos "" oracle && echo "oracle:ginger" | chpasswd
+addgroup test_group
+adduser oracle test_group
 apt-get update && apt-get upgrade -y
 apt-get install linux-headers-amd64 -y
 tail -f /dev/null
