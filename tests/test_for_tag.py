@@ -54,4 +54,4 @@ assert tag_counts["T1156_bash_profile_and_bashrc"] == 3
 assert tag_counts["T1078_valid_accounts"] == 1
 assert tag_counts["T1168_local_job_scheduling"] == 1
 assert tag_counts["T1136_create_account"] == 1
-assert tag_counts["ssh_logs"] == 53
+assert tag_counts["ssh_logs"] == 4
