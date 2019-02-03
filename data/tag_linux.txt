@@ -19,6 +19,8 @@ T1136_create_account:
 ssh_logs:
   data_type is "syslog:line" AND (body contains "ssh" or body contains "ssh2" or body contains "sshd")
 
+T1098_account_manipulation:
+    data_type is "syslog:line" AND (body contains "new group" or body contains "groupadd" or body contains "to group")
 
 
  
