@@ -8,7 +8,7 @@ jobs:
       - run:
           name: install python
           command: |
-            ./docker/install_python.sh
+            ./tools/install_python.sh
       - run: 
           name: setup venv
           command: |
