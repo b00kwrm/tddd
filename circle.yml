@@ -29,7 +29,7 @@ jobs:
       - run:
           name: run docker mount script
           command: |
-            sudo python tools/get-docker-fs.py
+            sudo python3 tools/get-docker-fs.py
       - run:
           name: sleep for 2 minutes
           command: |
