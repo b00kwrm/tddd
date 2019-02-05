@@ -1,10 +1,13 @@
-sudo apt-get install libreadline-gplv2-dev libncursesw5-dev libssl-dev libsqlite3-dev tk-dev libgdbm-dev libc6-dev libbz2-dev
+sudo apt-get update
+sudo apt-get upgrade -y
+sudo apt-get install build-essential checkinstall
+sudo apt-get install libbz2-dev libc6-dev libgdbm-dev libncursesw5-dev libreadline-gplv2-dev libssl-dev libsqlite3-dev tk-dev
 wget https://www.python.org/ftp/python/3.7.2/Python-3.7.2.tgz
 tar xzvf Python-3.7.2.tgz
 cd Python-3.7.2
 ./configure
 sudo make
-sudo make install
+sudo make altinstall
 cd ~/
 /usr/local/bin/python3.7 -m venv venv
 . venv/bin/activate
