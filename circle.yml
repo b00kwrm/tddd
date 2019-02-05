@@ -77,6 +77,7 @@ jobs:
       - run:
           name: run unit test
           command: |
+            source venv/bin/activate
             py.test
 
   deploy:
