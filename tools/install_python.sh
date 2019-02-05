@@ -4,7 +4,7 @@ sudo apt-get install build-essential checkinstall libbz2-dev libc6-dev libgdbm-d
 wget https://www.python.org/ftp/python/3.7.2/Python-3.7.2.tgz
 tar xzvf Python-3.7.2.tgz
 cd Python-3.7.2
-./configure
+./configure --enable-optimizations >> conf_script.txt
 sudo make
 sudo make altinstall
 cd ~/
