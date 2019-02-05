@@ -1,7 +1,6 @@
 sudo apt-get update
 sudo apt-get upgrade -y
-sudo apt-get install build-essential checkinstall
-sudo apt-get install libbz2-dev libc6-dev libgdbm-dev libncursesw5-dev libreadline-gplv2-dev libssl-dev libsqlite3-dev tk-dev
+sudo apt-get install build-essential checkinstall libbz2-dev libc6-dev libgdbm-dev libncursesw5-dev libreadline-gplv2-dev libssl-dev libsqlite3-dev tk-dev openssl
 wget https://www.python.org/ftp/python/3.7.2/Python-3.7.2.tgz
 tar xzvf Python-3.7.2.tgz
 cd Python-3.7.2
