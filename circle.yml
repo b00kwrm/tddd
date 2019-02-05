@@ -10,14 +10,6 @@ jobs:
           command: |
             pyenv global 3.5.2
       - run: 
-          name: setup venv
-          command: |
-            pyenv virtualenv 3.4.0 venv
-      - run: 
-          name: activate venv for all commands by putting it in shell env variable.
-          command: |
-            echo "source venv/bin/activate" >> $BASH_ENV
-      - run: 
           name: install python dependencies
           command: |
             pip install -r requirements.txt
