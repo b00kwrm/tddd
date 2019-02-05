@@ -8,7 +8,7 @@ jobs:
       - run:
           name: install python
           command: |
-            ./install_python.sh
+            ./docker/install_python.sh
       - run: 
           name: setup venv
           command: |
@@ -36,7 +36,7 @@ jobs:
       - run:
           name: run docker mount script
           command: |
-            sudo /usr/local/bin/python3.7 get-docker-fs.py
+            sudo /usr/local/bin/python3.7 tools/get-docker-fs.py
       - run:
           name: sleep for 2 minutes
           command: |
@@ -48,7 +48,7 @@ jobs:
       - run:
          name: login with ssh to docker with python
          command: |
-           python tests/ssh_pexpect.py
+           python docker/ssh_pexpect.py
       - run:
           name: build custom plaso docker container
           command: |
@@ -75,9 +75,9 @@ jobs:
           path: /home/circleci/repo/tddd-cron-tagged.json
           destination: tddd-cron-tagged.json
       - run:
-          name: test csv for tag
+          name: run unit test
           command: |
-            python tests/test_for_tag.py tddd-cron-tagged.json
+            py.test
 
   deploy:
     machine: true

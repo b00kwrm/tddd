@@ -1,3 +1,4 @@
 pexpect
 pre-commit
+pytest
 coveralls
