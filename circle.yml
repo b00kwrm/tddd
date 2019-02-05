@@ -8,11 +8,11 @@ jobs:
       - run:
           name: install python
           command: |
-            pyenv versions
+            pyenv global 3.5.2
       - run: 
           name: setup venv
           command: |
-            /usr/local/bin/python3.7 -m venv venv
+            pyenv virtualenv 3.4.0 venv
       - run: 
           name: activate venv for all commands by putting it in shell env variable.
           command: |
