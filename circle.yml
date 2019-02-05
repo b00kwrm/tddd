@@ -14,9 +14,9 @@ jobs:
           command: |
             /usr/local/bin/python3.7 -m venv venv
       - run: 
-          name: activate venv
+          name: activate venv for all commands by putting it in shell env variable.
           command: |
-            source venv/bin/activate
+            echo "source venv/bin/activate" >> $BASH_ENV
       - run: 
           name: install python dependencies
           command: |
