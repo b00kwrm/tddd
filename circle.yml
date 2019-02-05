@@ -13,10 +13,6 @@ jobs:
             /usr/local/bin/python3.7 -m venv venv
             . venv/bin/activate
             pip install -r requirements.txt
-      - run: 
-          name: install python dependencies
-          command: |
-
       - run:
           name: build docker container for testing cron
           command: |
