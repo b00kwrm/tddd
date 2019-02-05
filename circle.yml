@@ -8,7 +8,7 @@ jobs:
       - run:
           name: install python
           command: |
-            python3.5.2 --version
+            pyenv versions
       - run: 
           name: setup venv
           command: |
