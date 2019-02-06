@@ -13,7 +13,7 @@ cd ..
 wget https://www.python.org/ftp/python/3.7.2/Python-3.7.2.tgz
 tar xzvf Python-3.7.2.tgz
 cd Python-3.7.2
-./configure --enable-optimizations >> conf_script.txt
+./configure
 sudo make
 sudo make install
 cd ~/repo
