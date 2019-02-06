@@ -7,6 +7,7 @@ cd Python-3.6.6
 ./configure --enable-optimizations >> conf_script.txt
 make
 sudo make altinstall
+cd ..
 /usr/local/bin/python3.7 -m venv venv
 . venv/bin/activate
 pip install -r requirements.txt
