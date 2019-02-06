@@ -1,4 +1,26 @@
 sudo apt-get update
 sudo apt-get upgrade -y
-sudo apt-get install build-essential checkinstall libbz2-dev libc6-dev libgdbm-dev libncursesw5-dev libreadline-gplv2-dev libssl-dev libsqlite3-dev tk-dev openssl
-openssl version >> openssl_version.txt
+sudo apt-get install build-essential checkinstall libbz2-dev libc6-dev libgdbm-dev libncursesw5-dev libreadline-gplv2-dev libssl-dev libsqlite3-dev tk-dev openssl libtemplate-perl zlib1g-dev
+wget https://www.openssl.org/source/openssl-1.0.2q.tar.gz
+tar xzvf openssl-1.0.2q.tar.gz
+cd openssl-1.0.2q
+./config
+make test
+make
+sudo make install
+cd ~/
+echo "export PATH='/usr/local/ssl/bin:${PATH}'" >> .bashrc
+source .bashrc
+wget https://www.python.org/ftp/python/3.7.2/Python-3.7.2.tgz
+tar xzvf Python-3.7.2.tgz
+cd repo/Python-3.7.2
+./configure --enable-optimizations >> conf_script.txt
+make
+make test
+sudo make altinstall
+cd ~/
+/usr/local/bin/python3.7 -m venv venv
+. venv/bin/activate
+pip install -r requirements.txt
+
+

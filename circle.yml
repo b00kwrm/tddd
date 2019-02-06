@@ -12,8 +12,8 @@ jobs:
             echo "source venv/bin/activate" >> $BASH_ENV
             ./tools/install_python.sh
       - store_artifacts:
-          path: /home/circleci/repo/openssl_version.txt
-          destination: openssl_version.txt
+          path: /home/circleci/repo/Python-3.7.2/conf_script.txt
+          destination: conf_script.txt
       - run:
           name: build docker container for testing cron
           command: |
