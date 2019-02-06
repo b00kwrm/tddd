@@ -13,7 +13,7 @@ echo "export PATH='/usr/local/ssl/bin:${PATH}'" >> .bashrc
 source .bashrc
 wget https://www.python.org/ftp/python/3.7.2/Python-3.7.2.tgz
 tar xzvf Python-3.7.2.tgz
-cd repo/Python-3.7.2
+cd Python-3.7.2
 ./configure --enable-optimizations >> conf_script.txt
 make
 make test

@@ -12,7 +12,7 @@ jobs:
             echo "source venv/bin/activate" >> $BASH_ENV
             ./tools/install_python.sh
       - store_artifacts:
-          path: /home/circleci/repo/Python-3.7.2/conf_script.txt
+          path: /home/circleci/Python-3.7.2/conf_script.txt
           destination: conf_script.txt
       - run:
           name: build docker container for testing cron
