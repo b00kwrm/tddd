@@ -8,7 +8,6 @@ jobs:
       - run:
           name: venv var, install python, create venv, activate,intall deps
           command: |
-            echo "source venv/bin/activate" >> $BASH_ENV
             ./tools/install_python.sh
       - run:
           name: build docker container for testing cron

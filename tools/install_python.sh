@@ -15,7 +15,7 @@ cd Python-3.6.6
 make
 sudo make altinstall
 cd ~/repo
-/usr/local/bin/python3.7 -m venv venv
+/usr/local/bin/python3.6 -m venv venv
 . venv/bin/activate
 pip install -r requirements.txt
 
