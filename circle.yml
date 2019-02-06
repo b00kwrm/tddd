@@ -27,9 +27,7 @@ jobs:
       - run:
           name: run docker mount script
           command: |
-            pyenv global 3.6.3
-            sudo pyenv global 3.6.3
-            sudo /usr/local/python3.7 tools/get-docker-fs.py
+            sudo /usr/local/python3.6 tools/get-docker-fs.py
       - run:
           name: sleep for 2 minutes
           command: |
