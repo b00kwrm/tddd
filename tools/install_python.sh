@@ -15,7 +15,7 @@ tar xzvf Python-3.7.2.tgz
 cd Python-3.7.2
 ./configure --enable-optimizations >> conf_script.txt
 sudo make
-sudo make altinstall
+sudo make install
 cd ~/repo
 /usr/local/bin/python3.6 -m venv venv
 . venv/bin/activate
