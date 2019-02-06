@@ -13,9 +13,8 @@ jobs:
       - run:
           name: build docker container for testing cron
           command: |
-            sudo echo "net.ipv4.ip_forward=1" >> /etc/sysctl.conf
-            sudo systemctl restart network
-            sudo sysctl net.ipv4.ip_forward
+            sudo /sbin/sysctl net.ipv4.conf.all.forwarding
+            sudo /sbin/sysctl -w net.ipv4.conf.all.forwarding=1
             docker build -f docker/Dockerfile -t b00kwrm/tddd-cron .
       - run:
           name: run docker container
