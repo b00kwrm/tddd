@@ -1,3 +1,5 @@
+LD_LIBRARY_PATH=/usr/local/ssl
+export LD_LIBRARY_PATH
 sudo apt-get update
 sudo apt-get upgrade -y
 sudo apt-get build-dep openssl
