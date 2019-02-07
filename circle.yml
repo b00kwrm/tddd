@@ -69,7 +69,8 @@ jobs:
       - run:
           name: run unit test
           command: |
-            /usr/local/bin/python3.7 -m py.test
+            source /home/circleci/repo/venv/bin/activate
+            python py.test
   deploy:
     machine: true
     working_directory: ~/repo
