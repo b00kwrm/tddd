@@ -26,7 +26,7 @@ jobs:
       - run:
           name: run docker mount script
           command: |
-            sudo source ~/repo/bin/activate
+            sudo source /home/circlci/repo/venv/bin/activate
             sudo python tools/get-docker-fs.py
       - run:
           name: sleep for 2 minutes
