@@ -17,7 +17,7 @@ cd Python-3.7.2
 sudo make
 sudo make install
 cd ~/repo
-/usr/local/bin/python3.6 -m venv venv
+/usr/local/bin/python3.7 -m venv venv
 . venv/bin/activate
 pip install -r requirements.txt
 
