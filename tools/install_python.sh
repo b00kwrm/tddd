@@ -16,7 +16,7 @@ cd Python-3.7.2
 ./configure
 sudo make
 sudo make install
-cd ~/repo
+cd /home/circleci/repo
 /usr/local/bin/python3.7 -m venv venv
 . venv/bin/activate
 pip install -r requirements.txt
