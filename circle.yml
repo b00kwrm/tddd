@@ -28,7 +28,8 @@ jobs:
           command: |
             sudo -s
             source /home/circlci/repo/venv/bin/activate
-            python /home/circlci/repo/tools/get-docker-fs.py
+            cd /home/circleci/repo/
+            python tools/get-docker-fs.py
       - run:
           name: sleep for 2 minutes
           command: |
