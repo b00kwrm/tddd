@@ -1,6 +1,7 @@
 sudo apt-get update
 sudo apt-get upgrade -y
-sudo apt-get install build-essential checkinstall libbz2-dev libc6-dev libgdbm-dev libncursesw5-dev libreadline-gplv2-dev libssl-dev libsqlite3-dev tk-dev libtemplate-perl zlib1g-dev
+sudo apt-get build-dep openssl
+sudo apt-get build-dep python3.5
 wget https://www.openssl.org/source/openssl-1.0.2q.tar.gz
 tar xzvf openssl-1.0.2q.tar.gz
 cd openssl-1.0.2q
