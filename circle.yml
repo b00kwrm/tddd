@@ -8,15 +8,15 @@ jobs:
       - run:
           name: install openssl
           command: |
-            sudo /home/circleci/repo/tools/setup_openssl.sh
+            ./tools/setup_openssl.sh
       - run:
           name: check for openssl
           command: |
-            python tools/check_openssl.py
+            ./tools/check_openssl.py
       - run:
           name: install python
           command: |
-            sudo /tools/setup_python.sh
+            setup_python.sh
       - run:
           name: setup venv and install deps
           command: |
