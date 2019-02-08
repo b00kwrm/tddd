@@ -9,7 +9,7 @@ jobs:
       - run:
           name: setup python, venv, and install deps
           command: |
-            pyenv global 3.5.2
+            pyenv global 3.7.0
             python -m venv venv
             source venv/bin/activate
             pip install --upgrade pip
