@@ -21,7 +21,7 @@ jobs:
           name: setup venv and install deps
           command: |
             cd /home/circleci/repo
-            /usr/local/bin/python3.7 -m venv /usr/local/bin/venv
+            /usr/local/bin/python3.7 -m venv /home/circleci/repo/venv
             source venv/bin/activate
             pip install -r requirements.txt
       - run:
