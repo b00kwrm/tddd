@@ -30,7 +30,7 @@ jobs:
       - run:
           name: run docker mount script
           command: |
-            sudo /usr/local/bin/python3.7 /home/circleci/repo/tools/get-docker-fs.py
+            python /home/circleci/repo/tools/get-docker-fs.py
       - run:
           name: sleep for 2 minutes
           command: |
