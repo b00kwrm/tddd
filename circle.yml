@@ -16,13 +16,12 @@ jobs:
       - run:
           name: install python
           command: |
-            sudo ./tools/setup_python.sh
+            sudo /tools/setup_python.sh
       - run:
           name: setup venv and install deps
           command: |
             cd /home/circleci/repo
             /usr/local/bin/python3.7 -m venv /home/circleci/repo/venv
-            source venv/bin/activate
             pip install -r requirements.txt
       - run:
           name: build docker container for testing cron
@@ -83,7 +82,7 @@ jobs:
           name: run unit test
           command: |
             source /home/circleci/repo/venv/bin/activate
-            python py.test
+            py.test
   deploy:
     machine: true
     working_directory: ~/repo
