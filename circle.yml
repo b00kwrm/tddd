@@ -8,7 +8,7 @@ jobs:
       - run:
           name: install openssl
           command: |
-            ./tools/setup_openssl.sh
+            sudo ./tools/setup_openssl.sh
       - run:
           name: check for openssl
           command: |
@@ -16,7 +16,7 @@ jobs:
       - run:
           name: install python
           command: |
-            ./tools/setup_python.sh
+            sudo ./tools/setup_python.sh
       - run:
           name: build docker container for testing cron
           command: |
