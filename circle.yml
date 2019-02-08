@@ -16,7 +16,7 @@ jobs:
       - run:
           name: install python
           command: |
-            setup_python.sh
+            ./tools/setup_python.sh
       - run:
           name: setup venv and install deps
           command: |
