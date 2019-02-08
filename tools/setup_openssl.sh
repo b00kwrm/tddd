@@ -7,4 +7,5 @@ cd openssl-1.0.2q
 sudo ./config
 sudo make
 sudo make install
+sudo mv /usr/bin/openssl /usr/bin/openssl.bak
 sudo ln -s /usr/local/ssl/bin/openssl /usr/bin/openssl
