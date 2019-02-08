@@ -18,6 +18,12 @@ jobs:
           command: |
             sudo ./tools/setup_python.sh
       - run:
+          name: setup venv and install deps
+          command: |
+            /usr/local/bin/python3.7 -m venv venv
+            source venv/bin/activate
+            pip install -r requirements.txt
+      - run:
           name: build docker container for testing cron
           command: |
             sudo /sbin/sysctl net.ipv4.conf.all.forwarding
