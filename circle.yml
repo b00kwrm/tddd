@@ -6,9 +6,17 @@ jobs:
     steps:
       - checkout
       - run:
-          name: venv var, install python, create venv, activate,intall deps
+          name: install openssl
           command: |
-            ./tools/install_python.sh
+            ./tools/setup_openssl.sh
+      - run:
+          name: check for openssl
+          command: |
+            python tools/check_openssl.py
+      - run:
+          name: install python
+          command: |
+            ./tools/setup_python.sh
       - run:
           name: build docker container for testing cron
           command: |
