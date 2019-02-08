@@ -20,7 +20,8 @@ jobs:
       - run:
           name: setup venv and install deps
           command: |
-            /usr/local/bin/python3.7 -m venv venv
+            cd /home/circleci/repo
+            /usr/local/bin/python3.7 -m venv /usr/local/bin/venv
             source venv/bin/activate
             pip install -r requirements.txt
       - run:
@@ -40,9 +41,7 @@ jobs:
       - run:
           name: run docker mount script
           command: |
-            sudo -s
-            source /home/circleci/repo/venv/bin/activate
-            /usr/local/bin/python3.7 tools/get-docker-fs.py
+            sudo /usr/local/bin/python3.7 /home/circleci/repo/tools/get-docker-fs.py
       - run:
           name: sleep for 2 minutes
           command: |
