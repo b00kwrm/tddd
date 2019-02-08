@@ -8,7 +8,7 @@ jobs:
       - run:
           name: install openssl
           command: |
-            sudo ./tools/setup_openssl.sh
+            sudo /home/circleci/repo/tools/setup_openssl.sh
       - run:
           name: check for openssl
           command: |
