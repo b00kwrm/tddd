@@ -30,6 +30,7 @@ jobs:
       - run:
           name: run docker mount script
           command: |
+            source venv/bin/activate
             python /home/circleci/repo/tools/get-docker-fs.py
       - run:
           name: sleep for 2 minutes
