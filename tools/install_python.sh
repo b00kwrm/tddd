@@ -11,7 +11,7 @@ sudo ./config
 sudo make
 sudo make install
 sudo mv /usr/bin/openssl /usr/bin/openssl_ORIG
-sudo ln -s /usr/local/ssl/bin/openssl /usr/bin/openssl
+sudo ln -sf /usr/local/ssl/bin/openssl `which openssl`
 cd ..
 wget https://www.python.org/ftp/python/3.7.2/Python-3.7.2.tgz
 tar xzvf Python-3.7.2.tgz
