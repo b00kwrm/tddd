@@ -6,22 +6,12 @@ jobs:
     steps:
       - checkout
       - run:
-          name: install openssl
+          name: setup python, venv, and install deps
           command: |
-            ./tools/setup_openssl.sh
-      - run:
-          name: check for openssl
-          command: |
-            python ./tools/check_openssl.py
-      - run:
-          name: install python
-          command: |
-            ./tools/setup_python.sh
-      - run:
-          name: setup venv and install deps
-          command: |
-            cd /home/circleci/repo
-            /usr/local/bin/python3.7 -m venv /home/circleci/repo/venv
+            pyenv global 3.5.2
+            python -m venv venv
+            source venv/bin/activate
+            pip install --upgrade pip
             pip install -r requirements.txt
       - run:
           name: build docker container for testing cron
@@ -81,8 +71,8 @@ jobs:
       - run:
           name: run unit test
           command: |
-            source /home/circleci/repo/venv/bin/activate
-            py.test
+            source ven/bin/activate
+            py.test tests/test_plaso_stats.py 
   deploy:
     machine: true
     working_directory: ~/repo
