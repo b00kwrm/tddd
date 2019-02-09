@@ -31,6 +31,7 @@ jobs:
       - run:
           name: run docker mount script
           command: |
+            sudo -s
             source venv/bin/activate
             python /home/circleci/repo/tools/get-docker-fs.py
       - run:
