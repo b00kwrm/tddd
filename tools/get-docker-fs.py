@@ -14,14 +14,14 @@ link_layers = []
 
 
 def get_docker_id():
-    docker_ps_out = subprocess.run(docker_ps, capture_output=True)
+    docker_ps_out = subprocess.run(docker_ps, stdout=subprocess.PIPE)
     docker_id = str(docker_ps_out.stdout.strip(), "utf-8")
     return docker_id
 
 
 def get_docker_fs(docker_id):
     docker_inspect.append(docker_id)
-    docker_inspect_out = subprocess.run(docker_inspect, capture_output=True)
+    docker_inspect_out = subprocess.run(docker_inspect, stdout=subprocess.PIPE)
     lower_dir_out = str(docker_inspect_out.stdout.strip(), "utf-8")
     lower_layer_dirs = lower_dir_out.split(":")
     return lower_layer_dirs
