@@ -36,6 +36,14 @@ def get_tagged_events(psort_dict):
     return tagged_events
 
 
+def get_data_types(psort_dict):
+    """iterate over dict and get data_types"""
+    data_types = set()
+    for event in psort_dict.keys():
+        data_types.add(psort_dict[event]["data_type"])
+    return data_types
+
+
 def check_for_tag(tags, tagged_events):
     """Check for the existence of a specific tag in a tag_event."""
     found_tags = set()
@@ -86,8 +94,10 @@ if __name__ == "__main__":
     tag_status = check_for_tag(tags, tagged_events)
     tag_counts = count_tags(tagged_events)
     tag_body = get_tag_and_body(tagged_events)
+    data_types = get_data_types(jf)
     pprint(tags)
     pprint(tagged_events)
     pprint(tag_status)
     pprint(tag_counts)
     pprint(tag_body)
+    pprint(data_types)

@@ -54,3 +54,9 @@ def test_check_for_tag(tag_file, custom_json):
     assert dict == type(tag_status)
     for tag in tag_status:
         assert tag_status[tag] == True
+
+
+def test_get_data_types(custom_json):
+    jf = plaso_stats.open_psort_json(custom_json)
+    data_types = plaso_stats.get_data_types(jf)
+    assert set == type(data_types)
