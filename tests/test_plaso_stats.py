@@ -55,6 +55,8 @@ def test_check_for_tag(tag_file, custom_json):
     tag_status = plaso_stats.check_for_tag(tags, tagged_events)
     assert dict == type(tag_status)
     for tag in tag_status:
+        if not tag_status[tag]:
+            print(tag, tag_status[tag])
         assert tag_status[tag] == True
 
 
