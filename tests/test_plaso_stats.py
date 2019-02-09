@@ -29,6 +29,8 @@ def test_get_tags_from_file(tag_file):
         "T1136_create_account",
         "ssh_logs",
         "T1098_account_manipulation",
+        "T1003_credential_dumping",
+        "S0002_mimikatz",
     ]
     assert list == type(tags)
     assert tags == expected_tags
