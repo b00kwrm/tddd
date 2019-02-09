@@ -25,5 +25,4 @@ T1098_account_manipulation
  data_type is "syslog:line" AND (reporter is "gpasswd" or body contains "added by root to group")
  data_type is "syslog:line" AND (reporter is "chpasswd" or body contains "password changed")
 
-TEST_TAG
- data_type is "test:tag"
+

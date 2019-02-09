@@ -32,7 +32,7 @@ def get_tagged_events(psort_dict):
     tagged_events = []
     for event in psort_dict.keys():
         if psort_dict[event].get("tag"):
-            tagged_events.append((event, jf[event]))
+            tagged_events.append((event, psort_dict[event]))
     return tagged_events
 
 

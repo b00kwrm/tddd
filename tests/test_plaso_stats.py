@@ -29,7 +29,6 @@ def test_get_tags_from_file(tag_file):
         "T1136_create_account",
         "ssh_logs",
         "T1098_account_manipulation",
-        "TEST_TAG",
     ]
     assert list == type(tags)
     assert tags == expected_tags
@@ -38,3 +37,20 @@ def test_get_tags_from_file(tag_file):
 def test_open_psort_json(custom_json):
     jf = plaso_stats.open_psort_json(custom_json)
     assert dict == type(jf)
+
+
+def test_get_tagged_events(tag_file, custom_json):
+    tags = plaso_stats.get_tags_from_file(tag_file)
+    jf = plaso_stats.open_psort_json(custom_json)
+    tagged_events = plaso_stats.get_tagged_events(jf)
+    assert list == type(tagged_events)
+
+
+def test_check_for_tag(tag_file, custom_json):
+    tags = plaso_stats.get_tags_from_file(tag_file)
+    jf = plaso_stats.open_psort_json(custom_json)
+    tagged_events = plaso_stats.get_tagged_events(jf)
+    tag_status = plaso_stats.check_for_tag(tags, tagged_events)
+    assert dict == type(tag_status)
+    for tag in tag_status:
+        assert tag_status[tag] == True
