@@ -31,8 +31,7 @@ jobs:
       - run:
           name: run docker mount script
           command: |
-            sudo pyenv global 3.6.3
-            sudo python /home/circleci/repo/tools/get-docker-fs.py
+            sudo sudo $(pyenv shell system; pyenv which python) /home/circleci/repo/tools/get-docker-fs.py
       - run:
           name: sleep for 2 minutes
           command: |
