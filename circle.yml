@@ -74,7 +74,7 @@ jobs:
       - run:
           name: run unit test
           command: |
-            source ven/bin/activate
+            source venv/bin/activate
             py.test tests/test_plaso_stats.py 
   deploy:
     machine: true
