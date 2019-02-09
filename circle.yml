@@ -43,6 +43,7 @@ jobs:
       - run:
          name: login with ssh to docker with python
          command: |
+           pyenv global 3.6.3
            python docker/ssh_pexpect.py
       - run:
           name: build custom plaso docker container
