@@ -1,5 +1,5 @@
 FROM debian:latest
-COPY ../test_data/mimikatz /tmp
+COPY mimikatz /tmp
 COPY docker/cron_test.py /tmp
 COPY docker/start-stuff.sh /tmp
 COPY docker/bash_timestamp.sh /etc/profile.d/
