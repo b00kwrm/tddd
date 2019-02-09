@@ -1,16 +1,15 @@
 version: 2
 jobs:
   build:
-    machine:
-      image: circleci/classic:edge
+    machine: true
     working_directory: ~/repo
     steps:
       - checkout
       - run:
           name: setup python, venv, and install deps
           command: |
-            pyenv install 3.6.6
-            pyenv global 3.6.6
+            pyenv install 3.6.3
+            pyenv global 3.6.3
             python -m venv venv
             source venv/bin/activate
             pip install --upgrade pip
