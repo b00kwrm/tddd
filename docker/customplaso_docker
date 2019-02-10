@@ -1,4 +1,4 @@
 FROM log2timeline/plaso:latest
 CMD mkdir /usr/local/share/plaso
 COPY data/tag_linux.txt /usr/local/share/plaso/
-
+COPY data/kiwi_passwords.yar /usr/local/share/plaso
