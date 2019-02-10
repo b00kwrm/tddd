@@ -79,6 +79,11 @@ jobs:
           path: /home/circleci/repo/tddd-cron-tagged.json
           destination: tddd-cron-tagged.json
       - run:
+          name: copy tddd-cron-tagged.json to test_data
+          command: |
+            cp tddd-cron-tagged.json test_data
+
+      - run:
           name: run unit test
           command: |
             source venv/bin/activate
