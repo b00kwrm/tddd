@@ -30,4 +30,5 @@ T1003_credential_dumping
 
 S0002_mimikatz
  yara_match is "mimikatz"
+ display_name contains "mimikatz"
 
