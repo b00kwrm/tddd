@@ -87,7 +87,12 @@ jobs:
           name: run unit test
           command: |
             source venv/bin/activate
-            py.test tests/test_plaso_stats.py 
+            py.test --cov=plaso_stats --cov-report html tests/test_plaso_stats.py
+            tar czvf coverage-report.tgz htmlcov
+      - store_artifacts:
+          path: /home/circleci/repo/coverage-report.tgz
+          destination: coverage-report.tgz
+            
   deploy:
     machine: true
     working_directory: ~/repo
@@ -113,14 +118,3 @@ workflows:
           filters:
             branches:
               only: master
-            
-
-
-
-
-
-
-    
-       
-
-
