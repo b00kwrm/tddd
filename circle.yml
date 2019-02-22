@@ -14,6 +14,9 @@ jobs:
             source venv/bin/activate
             pip install --upgrade pip
             pip install -r requirements.txt
+            git clone git@github.com:b00kwrm/pexplore.git
+            cd pexplore
+            python setup.py install
       - run:
           name: build docker container for testing cron
           command: |
@@ -84,6 +87,11 @@ jobs:
           command: |
             cp tddd-cron-tagged.json test_data
             cp pinfo.json test_data
+      - run:
+          name: run pexplore on pinfo.json
+          command: |
+            source venv/bin/activate
+            pexplore pinfo.json
       - run:
           name: run unit test
           command: |
