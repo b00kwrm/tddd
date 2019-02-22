@@ -73,10 +73,17 @@ jobs:
           path: /home/circleci/repo/tddd-cron.plaso
           destination: tddd-cron.plaso
       - run:
-          name: copy tddd-cron-tagged.json to test_data
+          name: run docker pinfo on /data/tddd-cron.plaso store the json file as circleci artifact;
+          command: |
+            docker run -v /mnt:/mnt -v /home/circleci/repo:/data b00kwrm/customplaso pinfo.py --output_format json -w /data/pinfo.json /data/tddd-cron.plaso
+      - store_artifacts:
+          path: /home/circleci/repo/pinfo.json
+          destination: pinfo.json
+      - run:
+          name: copy tddd-cron-tagged.json and pinfo.json to test_data
           command: |
             cp tddd-cron-tagged.json test_data
-
+            cp pinfo.json test_data
       - run:
           name: run unit test
           command: |
