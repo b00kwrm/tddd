@@ -36,3 +36,7 @@ def test_pexplore_cli():
         for ltag in ltags:
             print(ltag)
             assert ltag in results_dict.keys()
+
+
+def test_for_tag_count():
+    assert 1 == 0
