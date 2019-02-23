@@ -36,7 +36,15 @@ def test_pexplore_cli():
         for ltag in ltags:
             print(ltag)
             assert ltag in results_dict.keys()
-
-
-def test_for_tag_count():
-    assert 1 == 0
+        # test tag counts
+        assert results_dict["S0002_mimikatz"] == 24
+        assert results_dict["T1078_valid_accounts"] == 1
+        assert results_dict["T1168_local_job_scheduling"] == 1
+        assert results_dict["T1136_create_account"] == 1
+        assert results_dict["T1057_Process_Discovery"] == 1
+        assert results_dict["T1105_remote_file_copy"] == 2
+        assert results_dict["T1098_account_manipulation"] == 8
+        assert results_dict["ssh_logs"] == 4
+        assert results_dict["T1215_Kernel_Modules_and_Extensions"] == 3
+        assert results_dict["T1156_bash_profile_and_bashrc"] == 3
+        assert results_dict["T1003_credential_dumping"] == 24
