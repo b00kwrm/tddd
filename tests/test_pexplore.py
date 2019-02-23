@@ -1,6 +1,7 @@
 from pexplore import pexplore
 from click.testing import CliRunner
 import json
+import shutil
 
 tags = '{"__type__": "collections.Counter", "T1215_Kernel_Modules_and_Extensions": 3, "S0002_mimikatz": 24, "total": 46, "T1057_Process_Discovery": 1, "T1098_account_manipulation": 8, "T1156_bash_profile_and_bashrc": 3, "ssh_logs": 4, "T1003_credential_dumping": 24, "T1078_valid_accounts": 1, "T1136_create_account": 1, "T1168_local_job_scheduling": 1}'
 

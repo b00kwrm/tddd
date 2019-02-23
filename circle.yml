@@ -83,10 +83,11 @@ jobs:
           path: /home/circleci/repo/pinfo.json
           destination: pinfo.json
       - run:
-          name: copy tddd-cron-tagged.json and pinfo.json to test_data
+          name: copy tddd-cron-tagged.json, pinfo.json, and tag_linux.txt to test_data
           command: |
             cp tddd-cron-tagged.json test_data
             cp pinfo.json test_data
+            cp tag_linux.txt
       - run:
           name: run pexplore on pinfo.json
           command: |
