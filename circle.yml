@@ -87,7 +87,7 @@ jobs:
           command: |
             cp tddd-cron-tagged.json test_data
             cp pinfo.json test_data
-            cp tag_linux.txt test_data
+            cp data/tag_linux.txt test_data
       - run:
           name: run pexplore on pinfo.json
           command: |
