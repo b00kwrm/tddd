@@ -19,8 +19,4 @@ def test_pexplore_cli():
         assert result.exit_code == 0
         # check for valid json
         results_dict = json.loads(result.output)
-        # dump back to json
-        json_result = json.dumps(results_dict)
-        print(repr(result.output))
-        assert json_result == tags
-        assert "S0002_mimikatz" in results_dict.keys()
+        assert result.output == tags
