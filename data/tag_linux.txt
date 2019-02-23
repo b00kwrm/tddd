@@ -32,3 +32,7 @@ S0002_mimikatz
  yara_match is "mimikatz"
  display_name contains "mimikatz"
 
+T1105_remote_file_copy
+ data_type is "bash:history:command" AND (command contains "rsync" or command contains "sftp" or command contains "scp")
+
+ 
