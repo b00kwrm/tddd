@@ -42,7 +42,7 @@ def test_pexplore_cli():
         assert results_dict["T1168_local_job_scheduling"] == 1
         assert results_dict["T1136_create_account"] == 1
         assert results_dict["T1057_Process_Discovery"] == 1
-        assert results_dict["T1105_remote_file_copy"] == 2
+        assert results_dict["T1105_remote_file_copy"] == 3
         assert results_dict["T1098_account_manipulation"] == 8
         assert results_dict["ssh_logs"] == 4
         assert results_dict["T1215_Kernel_Modules_and_Extensions"] == 3
