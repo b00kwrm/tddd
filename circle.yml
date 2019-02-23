@@ -97,7 +97,7 @@ jobs:
           name: run unit test
           command: |
             source venv/bin/activate
-            py.test --cov=plaso_stats --cov-report html tests/test_pexplore.py
+            py.test --cov=pexplore --cov-report html tests/test_pexplore.py
             tar czvf coverage-report.tgz htmlcov
       - store_artifacts:
           path: /home/circleci/repo/coverage-report.tgz
