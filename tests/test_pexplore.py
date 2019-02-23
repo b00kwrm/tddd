@@ -17,6 +17,6 @@ def test_pexplore_cli():
             f.write(pinfo_file)
         result = runner.invoke(pexplore.cli, ["pinfo_file.json"])
         assert result.exit_code == 0
-        # check for valid json
-        results_dict = json.loads(result.output)
         assert result.output == tags
+        results_dict = json.loads(result.output)
+        assert "S0002_mimikatz" in results_dict.keys()
