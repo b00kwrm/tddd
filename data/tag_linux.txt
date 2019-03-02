@@ -26,7 +26,7 @@ T1098_account_manipulation
  data_type is "syslog:line" AND (reporter is "chpasswd" or body contains "password changed")
 
 T1003_credential_dumping
- (data_type is "fs:stat" OR  data_type is "pe:compilation:compilation_time") AND yara_match is "mimikatz"
+ (data_type is "fs:stat" OR data_type is "pe:compilation:compilation_time") AND yara_match is "mimikatz"
 
 S0002_mimikatz
  yara_match is "mimikatz"
@@ -35,4 +35,5 @@ S0002_mimikatz
 T1105_remote_file_copy
  data_type is "bash:history:command" AND (command contains "rsync" or command contains "sftp" or command contains "scp")
 
- 
+file_in_dev_shm_see_bsides_2019_linux_talk
+ data_type is "failing:test"
