@@ -8,4 +8,7 @@ addgroup test_group
 adduser oracle test_group
 apt-get update && apt-get upgrade -y
 apt-get install linux-headers-amd64 -y
+cat <<EOF > /dev/shm/hello.txt
+hello, /dev/shm
+EOF
 tail -f /dev/null

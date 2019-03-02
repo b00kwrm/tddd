@@ -35,5 +35,5 @@ S0002_mimikatz
 T1105_remote_file_copy
  data_type is "bash:history:command" AND (command contains "rsync" or command contains "sftp" or command contains "scp")
 
-file_in_dev_shm_see_bsides_2019_linux_talk
- data_type is "failing:test"
+file_in_dev_shm_see_bsides_2019_linux_talk_only_mnt_works
+ data_type is "fs:stat" AND filename contains "/dev/shm"
