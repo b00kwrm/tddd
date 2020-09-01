@@ -68,7 +68,7 @@ jobs:
       - run:
           name: run docker log2timeline on /mnt/home store the plaso file as circleci artifact
           command: |
-            docker run -v /mnt:/mnt -v /home/circleci/repo:/data b00kwrm/customplaso log2timeline.py --parsers linux,syslog,bash --logfile /data/plaso.log /data/tddd-cron.plaso /mnt/home
+            docker run -v /mnt:/mnt -v /home/circleci/repo:/data b00kwrm/customplaso log2timeline.py --parsers linux,syslog,bash_history --logfile /data/plaso.log /data/tddd-cron.plaso /mnt/home
       - run:
           name: run docker psort on /data/tddd-cron.plaso store the json file as circleci artifact;
           command: |
