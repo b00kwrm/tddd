@@ -12,7 +12,7 @@ chardet==3.0.4
 Click==7.0
 coverage==4.5.2
 coveralls==1.5.1
-cryptography==2.4.2
+cryptography==3.2
 docopt==0.6.2
 fabric==2.4.0
 filelock==3.0.10
